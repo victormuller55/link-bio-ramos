@@ -1,0 +1,58 @@
+/* ========== SEÇÃO: HISTÓRIA ========== */
+.about {
+  animation: fadeInUp 0.8s ease 0.25s both;
+}
+
+.about__card {
+  background: rgba(10, 10, 10, 0.35);
+  border: 1px solid var(--color-white-10);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.about__card p {
+  font-size: var(--font-size-sm);
+  line-height: 1.75;
+  color: var(--color-white-90);
+  margin-bottom: var(--space-md);
+}
+
+.about__card p:last-of-type {
+  margin-bottom: 0;
+}
+
+.about__quote {
+  margin-top: var(--space-lg) !important;
+  padding: var(--space-md);
+  background: var(--color-accent);
+  color: var(--color-primary-dark) !important;
+  font-family: var(--font-display);
+  font-size: var(--font-size-sm) !important;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1.45;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.about__card strong {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.about__quote strong {
+  color: var(--color-primary-dark);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,91 @@
+/* ========== SEÇÃO: VÍDEO ========== */
+.media {
+  animation: fadeInUp 0.8s ease 0.15s both;
+}
+
+.media__player {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 2px solid var(--color-white-20);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.media__player:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-white-50);
+}
+
+.media__player:hover .media__play {
+  transform: translate(-50%, -50%) scale(1.1);
+  background: var(--color-accent);
+  color: var(--color-primary-dark);
+}
+
+.media__player:hover .media__overlay {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.media__thumb {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.media__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.12);
+  transition: background var(--transition-base);
+}
+
+.media__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  background: var(--color-white);
+  color: var(--color-primary);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-base), background var(--transition-base), color var(--transition-base);
+}
+
+.media__play svg {
+  width: 28px;
+  height: 28px;
+  margin-left: 3px;
+}
+
+.media__label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-sm) var(--space-md);
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  text-align: left;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,123 @@
+/* ========== SEÇÃO: HEADER / PERFIL ========== */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: fadeInDown 0.8s ease both;
+}
+
+.header__avatar-wrapper {
+  position: relative;
+  margin-bottom: var(--space-md);
+}
+
+.header__avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  object-position: center 20%;
+  border: 3px solid var(--color-white);
+  box-shadow: var(--shadow-md), 0 0 0 4px rgba(168, 214, 105, 0.12);
+  transition: transform var(--transition-slow), box-shadow var(--transition-slow);
+}
+
+.header__avatar:hover {
+  transform: scale(1.04);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+.header__party-badge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  background: var(--color-white);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 2px solid var(--color-white);
+}
+
+.header__party-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.header__handle {
+  font-size: var(--font-size-sm);
+  color: var(--color-white-70);
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-xs);
+}
+
+.header__name {
+  font-family: var(--font-family);
+  font-size: var(--font-size-3xl);
+  letter-spacing: 0.12em;
+  line-height: 1.1;
+  margin-bottom: var(--space-md);
+}
+
+.header__name--bold {
+  font-weight: 800;
+}
+
+.header__name--light {
+  font-weight: 400;
+}
+
+.header__divider {
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-white-50),
+    transparent
+  );
+  margin-bottom: var(--space-md);
+}
+
+.header__slogan-wrap {
+  position: relative;
+  margin-bottom: var(--space-sm);
+}
+
+.header__slogan {
+  display: inline-block;
+  padding: 0.45rem 1.1rem;
+  background: var(--color-accent);
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1.3;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.header__role {
+  font-size: var(--font-size-xs);
+  color: var(--color-white-50);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
