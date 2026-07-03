@@ -4,7 +4,6 @@
 .campaign-banner {
   position: relative;
   margin-bottom: var(--space-lg);
-  animation: campaignBannerIn 0.7s cubic-bezier(0.4, 0, 0.2, 1) both;
 }
 
 .campaign-banner__row {
@@ -101,15 +100,4 @@
   background: var(--color-black);
   margin: 0 calc(var(--page-padding) * -1);
   padding: var(--space-lg) var(--page-padding);
-}
-
-@keyframes campaignBannerIn {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }

@@ -1,8 +1,4 @@
 /* ========== SEÇÃO: VÍDEO ========== */
-.media {
-  animation: fadeInUp 0.8s ease 0.15s both;
-}
-
 .media__player {
   position: relative;
   width: 100%;
@@ -77,15 +73,4 @@
   font-size: var(--font-size-sm);
   font-weight: 600;
   text-align: left;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }

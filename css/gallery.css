@@ -1,8 +1,4 @@
 /* ========== GALERIA MOBILE — CARROSSEL SNAP ========== */
-.gallery {
-  animation: fadeInUp 0.8s ease 0.32s both;
-}
-
 .gallery__hint {
   display: flex;
   align-items: center;
@@ -29,6 +25,7 @@
   scrollbar-width: none;
   margin: 0 calc(var(--page-padding) * -1);
   padding: var(--space-xs) var(--page-padding) var(--space-md);
+  container-type: inline-size;
 }
 
 .gallery__carousel::-webkit-scrollbar {
@@ -40,10 +37,17 @@
   gap: var(--space-md);
 }
 
+.gallery__track::before,
+.gallery__track::after {
+  content: '';
+  flex: 0 0 var(--gallery-edge, calc((100cqi - min(88cqi, 340px)) / 2));
+  scroll-snap-align: none;
+  pointer-events: none;
+}
+
 /* Card */
 .gallery__card {
-  flex: 0 0 88%;
-  max-width: 340px;
+  flex: 0 0 min(88cqi, 340px);
   scroll-snap-align: center;
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -269,9 +273,4 @@
 @keyframes galleryScaleIn {
   from { opacity: 0; transform: scale(0.94); }
   to { opacity: 1; transform: scale(1); }
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
 }

@@ -1,28 +1,19 @@
 /**
- * Configurações da link bio — RAMOS SOMAR
- * Edite os links e URLs aqui para personalizar a página.
+ * Configurações centrais da BioLink
+ * Altere API_BASE_URL e SITE_ID aqui.
+ */
+const API_BASE_URL = 'https://api.convertix.net.br';
+const SITE_ID = 2;
+const DEFAULT_AVATAR = 'assets/default-avatar.svg';
+
+/**
+ * Configurações locais (vídeo, galeria) — não vêm da API pública.
  */
 const CONFIG = {
-  candidate: {
-    name: 'RAMOS SOMAR',
-    handle: '@ramosssomar',
-    role: 'Deputado Estadual · Goiás',
-    slogan: 'É da gente, é pra somar, em Goiás',
-  },
-
   video: {
-    // Substitua pelo ID do vídeo do YouTube (ex: dQw4w9WgXcQ)
     youtubeId: 'SEU_VIDEO_ID_AQUI',
   },
 
-  social: {
-    youtube: 'https://youtube.com/@ramosssomar',
-    instagram: 'https://instagram.com/ramosssomar',
-    whatsapp: 'https://wa.me/5562999999999',
-    tiktok: 'https://tiktok.com/@ramosssomar',
-  },
-
-  // Edite os caminhos em assets/galeria/ (foto-1.png … foto-6.png)
   gallery: [
     {
       src: 'assets/galeria/foto-1.png',

@@ -24,7 +24,19 @@ const Gallery = {
     if (!this.carousel || !this.cards.length) return;
 
     this.bindEvents();
+    this.syncTrackPadding();
+    requestAnimationFrame(() => this.syncTrackPadding());
+    window.addEventListener('resize', () => this.syncTrackPadding(), { passive: true });
     this.updateActive(0);
+  },
+
+  syncTrackPadding() {
+    const track = document.getElementById('galleryTrack');
+    const card = this.cards[0];
+    if (!this.carousel || !track || !card) return;
+
+    const pad = Math.max(0, (this.carousel.clientWidth - card.offsetWidth) / 2);
+    track.style.setProperty('--gallery-edge', `${pad}px`);
   },
 
   bindEvents() {
@@ -61,17 +73,37 @@ const Gallery = {
   },
 
   onScroll() {
-    const scrollLeft = this.carousel.scrollLeft;
-    const cardWidth = this.cards[0]?.offsetWidth ?? 1;
-    const gap = 16;
-    const index = Math.round(scrollLeft / (cardWidth + gap));
-    this.updateActive(Math.min(index, this.cards.length - 1));
+    const carouselRect = this.carousel.getBoundingClientRect();
+    const center = carouselRect.left + carouselRect.width / 2;
+
+    let closest = 0;
+    let minDist = Infinity;
+
+    this.cards.forEach((card, index) => {
+      const rect = card.getBoundingClientRect();
+      const cardCenter = rect.left + rect.width / 2;
+      const dist = Math.abs(cardCenter - center);
+
+      if (dist < minDist) {
+        minDist = dist;
+        closest = index;
+      }
+    });
+
+    this.updateActive(closest);
   },
 
   scrollTo(index) {
     const card = this.cards[index];
-    if (!card) return;
-    card.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    if (!card || !this.carousel) return;
+
+    const carouselRect = this.carousel.getBoundingClientRect();
+    const cardRect = card.getBoundingClientRect();
+    const cardCenter = cardRect.left + cardRect.width / 2;
+    const carouselCenter = carouselRect.left + carouselRect.width / 2;
+    const delta = cardCenter - carouselCenter;
+
+    this.carousel.scrollBy({ left: delta, behavior: 'smooth' });
     this.updateActive(index);
   },
 

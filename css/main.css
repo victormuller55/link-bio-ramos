@@ -1,6 +1,7 @@
 /* ========== ARQUIVO PRINCIPAL — IMPORTS ========== */
 @import url('variables.css');
 @import url('reset.css');
+@import url('animations.css');
 @import url('layout.css');
 @import url('campaign.css');
 @import url('header.css');
@@ -10,3 +11,4 @@
 @import url('gallery.css');
 @import url('footer.css');
 @import url('modal.css');
+@import url('biolink.css');

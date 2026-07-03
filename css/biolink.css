@@ -1,0 +1,168 @@
+/* ========== ESTADOS DA BIOLINK (loading / erro) ========== */
+.biolink-loading {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  background: rgba(10, 45, 34, 0.85);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.biolink-loading[hidden] {
+  display: none;
+}
+
+.biolink-loading__spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-top-color: var(--color-accent);
+  border-radius: 50%;
+  animation: biolinkSpin 0.8s linear infinite;
+}
+
+.biolink-loading__text {
+  font-size: var(--font-size-sm);
+  color: var(--color-white-70);
+  letter-spacing: 0.05em;
+}
+
+.biolink-error {
+  margin: var(--space-md) auto;
+  max-width: 480px;
+  padding: var(--space-md) var(--space-lg);
+  background: rgba(180, 40, 40, 0.15);
+  border: 1px solid rgba(255, 100, 100, 0.4);
+  border-radius: var(--radius-md);
+  color: #ffb4b4;
+  text-align: center;
+  font-size: var(--font-size-sm);
+}
+
+.biolink-error[hidden] {
+  display: none;
+}
+
+.biolink-not-found {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  padding: var(--page-padding);
+  background: transparent;
+  animation: biolinkNotFoundIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.biolink-not-found[hidden] {
+  display: none !important;
+}
+
+.biolink-not-found__content {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.biolink-not-found__code {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 18vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: var(--color-accent);
+  text-shadow: 0 4px 24px rgba(168, 214, 105, 0.25);
+  margin-bottom: var(--space-sm);
+}
+
+.biolink-not-found__title {
+  font-family: var(--font-display);
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  margin-bottom: var(--space-md);
+}
+
+.biolink-not-found__text {
+  font-size: var(--font-size-sm);
+  line-height: 1.65;
+  color: var(--color-white-70);
+  margin-bottom: var(--space-xl);
+}
+
+.biolink-not-found__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 160px;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-primary-dark);
+  background: var(--color-accent);
+  border: none;
+  border-radius: var(--radius-full);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base),
+    background var(--transition-base);
+}
+
+.biolink-not-found__btn:hover {
+  background: var(--color-accent-bright);
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.22);
+}
+
+.biolink-not-found__btn:active {
+  transform: translateY(0);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.links__empty {
+  text-align: center;
+  color: var(--color-white-50);
+  font-size: var(--font-size-sm);
+  padding: var(--space-md);
+}
+
+@keyframes biolinkSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes biolinkNotFoundIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page[hidden] {
+  display: none !important;
+}
+
+body.is-not-found .page,
+body.is-not-found .gallery-modal,
+body.is-not-found .video-modal {
+  display: none !important;
+}
