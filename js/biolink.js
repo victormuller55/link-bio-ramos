@@ -55,7 +55,7 @@ function renderizarPerfil(data) {
     avatar.src = data.foto_perfil
       ? `${API_BASE_URL}${data.foto_perfil}`
       : DEFAULT_AVATAR;
-    avatar.alt = 'Foto de RAMOS SOMAR, candidato a Deputado Estadual';
+    avatar.alt = 'Foto de RAMOS SOMAR, pré-candidato a Deputado Estadual';
   }
 
   if (handleEl && data.nome_usuario) {
