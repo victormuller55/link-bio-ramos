@@ -11,7 +11,7 @@ const DEFAULT_AVATAR = 'assets/default-avatar.svg';
  */
 const CONFIG = {
   video: {
-    youtubeId: 'SEU_VIDEO_ID_AQUI',
+    youtubeId: 'Q_5ZqwbIIvw',
   },
 
   gallery: [

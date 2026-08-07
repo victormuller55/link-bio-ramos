@@ -6,7 +6,8 @@ const Animations = {
 
   REVEAL_SELECTOR: [
     '.header',
-    '.media',
+    '.media > .campaign-banner',
+    '.media__player',
     '.links > .campaign-banner',
     '.links__card',
     '.campaign-panel .campaign-banner',

@@ -79,8 +79,18 @@
     </header>
 
     <!-- ========== SEÇÃO: VÍDEO ========== -->
-    <section class="media" id="video" aria-labelledby="video-title" hidden>
-      <h2 class="sr-only" id="video-title">Vídeo de apresentação</h2>
+    <section class="media" id="video" aria-labelledby="video-title">
+      <div class="campaign-banner">
+        <div class="campaign-banner__row">
+          <span class="campaign-banner__check" aria-hidden="true">✓</span>
+          <div class="campaign-banner__box">
+            <h2 class="campaign-banner__title" id="video-title">Assista</h2>
+          </div>
+        </div>
+        <p class="campaign-banner__subtitle">
+          Conheça a mensagem e o projeto de Ramos Somar para o Goiás.
+        </p>
+      </div>
 
       <button class="media__player" type="button" aria-label="Assistir vídeo de apresentação">
         <img
@@ -91,12 +101,16 @@
           height="500"
         >
         <span class="media__overlay"></span>
+        <span class="media__badge">Vídeo oficial</span>
         <span class="media__play">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M8 5v14l11-7z"/>
           </svg>
         </span>
-        <span class="media__label">Assistir vídeo</span>
+        <span class="media__footer">
+          <span class="media__label">Assistir vídeo</span>
+          <span class="media__meta">Apresentação · RAMOS SOMAR</span>
+        </span>
       </button>
     </section>
 
