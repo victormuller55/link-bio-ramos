@@ -35,6 +35,7 @@
 .campaign-banner__box {
   position: relative;
   z-index: 1;
+  width: fit-content;
   padding: 0.55rem 1rem 0.55rem 1.35rem;
   background: var(--color-accent);
   color: var(--color-primary-dark);

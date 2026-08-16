@@ -48,8 +48,6 @@ async function carregarBioLink() {
 function renderizarPerfil(data) {
   const avatar = document.getElementById('headerAvatar');
   const handleEl = document.getElementById('headerHandle');
-  const sloganWrap = document.getElementById('headerSloganWrap');
-  const sloganEl = document.getElementById('headerSlogan');
 
   if (avatar) {
     avatar.src = data.foto_perfil
@@ -62,10 +60,6 @@ function renderizarPerfil(data) {
     const handle = data.nome_usuario.trim();
     handleEl.textContent = handle.startsWith('@') ? handle : `@${handle}`;
     handleEl.hidden = false;
-  }
-
-  if (sloganWrap && sloganEl && data.descricao) {
-    sloganEl.textContent = data.descricao;
   }
 }
 
